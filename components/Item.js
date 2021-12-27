@@ -1,5 +1,13 @@
 import React from 'react';
-import { TouchableOpacity, StyleSheet, Text, Image, View } from 'react-native';
+import {
+  TouchableOpacity,
+  StyleSheet,
+  Text,
+  Image,
+  View,
+  Alert,
+  Button,
+} from 'react-native';
 import { Divider } from 'react-native-elements';
 const styles = StyleSheet.create({
   item: {
@@ -30,6 +38,12 @@ const styles = StyleSheet.create({
   textPost: {
     fontSize: 13,
     fontWeight: 'bold',
+  },
+  button: {
+    alignItems: 'center',
+    padding: 10,
+    width: '45%',
+    borderRadius: 4,
   },
 });
 
@@ -85,6 +99,26 @@ export default ({
           <View style={{ marginTop: 10 }}>
             <Text style={styles.titlePost}>Payroll Notes</Text>
             <Text style={styles.textPost}>{item.payrol}</Text>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              marginTop: 10,
+            }}
+          >
+            <TouchableOpacity
+              style={[styles.button, { backgroundColor: 'red' }]}
+              onPress={() => Alert.alert('Khưa', 'You click Edit')}
+            >
+              <Text style={{ color: '#fff' }}>Edit</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.button, { backgroundColor: '#DDDDDD' }]}
+              onPress={() => Alert.alert('Khưa', 'You click Delete')}
+            >
+              <Text>Delete</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
